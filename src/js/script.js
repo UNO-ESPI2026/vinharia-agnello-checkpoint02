@@ -23,3 +23,18 @@ function validarNumero(mensagem) {
 function estoqueBaixo(quantidade) {
     return quantidade < 5;
 }
+
+function classificarVinho(safra) {
+    const ano = 2026;
+    const idade = ano - safra
+
+    if (idade <= 3) {
+        return "Vinho jovem";
+    }
+    else if (idade <= 10) {
+        return "Vinho amadurecido";
+    }
+    else {
+        return "Vinho antigo";
+    }
+}

@@ -19,3 +19,7 @@ function validarNumero(mensagem) {
 
   return valor;
 }
+
+function estoqueBaixo(quantidade) {
+    return quantidade < 5;
+}

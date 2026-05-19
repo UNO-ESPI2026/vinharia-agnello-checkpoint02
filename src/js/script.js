@@ -49,3 +49,7 @@ function exibirVinho(nome, safra, quant) {
   alert(msg);
   console.log(msg);
 }
+let quantidade = Number(prompt("Quantos vinhos deseja cadastrar?"));
+let totalEstoqueBaixo = 0;
+let safraAntigaNome = "";
+let safraAntigaAno = 9999;

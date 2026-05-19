@@ -41,7 +41,7 @@ function classificarVinho(safra) {
 
 function exibirVinho(nome, safra, quant) {
   let classificacao = classificarVinho(safra);
-  let baixo = estoqueBaixo(quant) ? "S" : "N";
+  let baixo = estoqueBaixo(quant) ? "Sim" : "Não";
   let msg = "Nome: " + nome +
             "\nSafra: " + safra +
             "\nQuantidade: " + quant +
@@ -71,3 +71,7 @@ while (i <= quantidade) {
 
   i++;
 }
+
+alert("Total de vinhos cadastrados: " + quantidade +
+      "\nVinhos com estoque baixo: " + totalEstoqueBaixo +
+      "\nVinho com safra mais antiga: " + safraAntigaNome + " (" + safraAntigaAno + ")");

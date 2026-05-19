@@ -9,6 +9,7 @@ function validarTexto(mensagem) {
   return valor.trim();
 }
 
+
 function validarNumero(mensagem) {
   let valor = Number(prompt(mensagem));
 
@@ -20,9 +21,11 @@ function validarNumero(mensagem) {
   return valor;
 }
 
+
 function estoqueBaixo(quantidade) {
     return quantidade < 5;
 }
+
 
 function classificarVinho(safra) {
     const ano = 2026;
@@ -37,4 +40,16 @@ function classificarVinho(safra) {
     else {
         return "Vinho antigo";
     }
+}
+
+function exibirVinho(nome,safra,quant){
+  let classificacao = classificarVinho(safra);
+  let baixo = estoqueBaixo(quant)? "S" : "N";
+  let msg = "Nome: " + nome +
+            "\nSafra: " + safra +
+            "\nQuantidade: " + quant +
+            "\nClassificação: " + classificacao +
+            "\nEstoque baixo: " + baixo;
+  alert(msg)
+  console.log(msg);
 }

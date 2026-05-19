@@ -38,3 +38,14 @@ function classificarVinho(safra) {
         return "Vinho antigo";
     }
 }
+function exibirVinho(nome, safra, quant) {
+  let classificacao = classificarVinho(safra);
+  let baixo = estoqueBaixo(quant) ? "Sim" : "Não";
+  let msg = "Nome: " + nome +
+            "\nSafra: " + safra +
+            "\nQuantidade: " + quant +
+            "\nClassificação: " + classificacao +
+            "\nEstoque baixo: " + baixo;
+  alert(msg);
+  console.log(msg);
+}

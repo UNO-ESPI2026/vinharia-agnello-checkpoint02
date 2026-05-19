@@ -38,9 +38,10 @@ function classificarVinho(safra) {
         return "Vinho antigo";
     }
 }
+
 function exibirVinho(nome, safra, quant) {
   let classificacao = classificarVinho(safra);
-  let baixo = estoqueBaixo(quant) ? "Sim" : "Não";
+  let baixo = estoqueBaixo(quant) ? "S" : "N";
   let msg = "Nome: " + nome +
             "\nSafra: " + safra +
             "\nQuantidade: " + quant +
@@ -53,3 +54,20 @@ let quantidade = Number(prompt("Quantos vinhos deseja cadastrar?"));
 let totalEstoqueBaixo = 0;
 let safraAntigaNome = "";
 let safraAntigaAno = 9999;
+
+let i = 1;
+while (i <= quantidade) {
+  let nome = validarTexto("Nome do vinho " + i + ":");
+  let safra = validarNumero("Safra do vinho " + i + ":");
+  let quant = validarNumero("Quantidade em estoque do vinho " + i + ":");
+
+  exibirVinho(nome, safra, quant);
+
+  if (estoqueBaixo(quant)) totalEstoqueBaixo++;
+  if (safra < safraAntigaAno) {
+    safraAntigaAno = safra;
+    safraAntigaNome = nome;
+  }
+
+  i++;
+}
